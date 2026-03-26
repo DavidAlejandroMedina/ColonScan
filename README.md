@@ -25,22 +25,6 @@ Enlaces a los repositorios principales:
 
 ---
 
-## Diagrama general
-
-```mermaid
-flowchart TB
-  A["Usuario / Médico"] -->|Sube DICOM| B["App-Web (Django)"]
-  B -->|Llama API ML (HTTP)| C["API-ML (FastAPI)"]
-  C -->|Procesa con ViT| D["Modelo ViT / TF"]
-  D -->|Resultados| C
-  C -->|Respuesta JSON| B
-  B -->|Muestra Reporte| A
-  subgraph Infra
-    C
-    D
-  end
-```
-
 ### Uso recomendado
 
 - Clona los repositorios por separado y sigue las instrucciones en cada `README.md` para levantar servicios (Docker o local).
